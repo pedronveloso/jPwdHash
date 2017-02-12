@@ -21,6 +21,7 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile 'net.sf.jopt-simple:jopt-simple:6.0-alpha-1'
 }
 sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
