@@ -13,6 +13,7 @@ class Main {
             val parser = OptionParser()
             parser.accepts(URL, "URL of the domain intended to be hashed").withRequiredArg().required()
             parser.accepts(PASS, "Password to use for the hashing process").withRequiredArg().required()
+            parser.posixlyCorrect(true)
 
             // Display help if sufficient arguments NOT provided
             if (args.size != 4) {
@@ -22,21 +23,8 @@ class Main {
 
             val options = parser.parse(args.component1(), args.component2(), args.component3(), args.component4())
 
-            // Test if provided parameters are the ones we expect
-            if (!options.has(URL)) {
-                print("ERROR: Missing ${URL} \n")
-                displayHelp(parser)
-                return
-            }
-            if (!options.has(PASS)) {
-                print("ERROR: Missing ${PASS} \n")
-                displayHelp(parser)
-                return
-            }
-
             execute(options)
         }
-
 
         private fun displayHelp(parser: OptionParser) {
             parser.printHelpOn(System.out)
@@ -50,6 +38,7 @@ class Main {
             val result = hashedPassword.toString()
 
             System.out.print(result)
+            System.out.print("\n")
         }
     }
 
