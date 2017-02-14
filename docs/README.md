@@ -18,7 +18,7 @@ You can also use the shortened version of the url parameter, the above example w
 
 Get the latest version of the application here: https://github.com/pedronveloso/jPwdHash/releases
 
-If you're using **Arch Linux** you can get the [package from AUR](https://aur.archlinux.org/packages/jpwdhash/).
+If you're using **Arch Linux** you can get the  `jpwdhash` [package from AUR](https://aur.archlinux.org/packages/jpwdhash/).
 
 # Preliminary note
 

@@ -30,7 +30,7 @@ Get the latest version of the application here: https://github.com/pedronveloso/
 
 or read the topic below to *build it yourself*.
 
-If you're using **Arch Linux** you can get the [package from AUR](https://aur.archlinux.org/packages/jpwdhash/).
+If you're using **Arch Linux** you can get the `jpwdhash` [package from AUR](https://aur.archlinux.org/packages/jpwdhash/).
 
 # Build it yourself
 
