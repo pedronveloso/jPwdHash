@@ -14,6 +14,12 @@ You can also use the shortened version of the url parameter, the above example w
 
     $ jPwdHash -u netflix.com
 
+# Get the application
+
+Get the latest version of the application here: https://github.com/pedronveloso/jPwdHash/releases
+
+or read the topic below to *build it yourself*.
+
 # Preliminary note
 
 The following topics on this document where written with the intention that they could be read

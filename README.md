@@ -26,7 +26,9 @@ and other important details.
 
 # Get the application
 
+Get the latest version of the application here: https://github.com/pedronveloso/jPwdHash/releases
 
+or read the topic below to *build it yourself*.
 
 # Build it yourself
 
