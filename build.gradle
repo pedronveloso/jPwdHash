@@ -11,6 +11,22 @@ buildscript {
 apply plugin: 'kotlin'
 apply plugin: 'application'
 
+version = "0.1"
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'jPwdHash',
+                'Implementation-Version': version,
+                'Main-Class': 'pedronveloso.jpwdhash.Main'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 mainClassName = "pedronveloso.jpwdhash.Main"
 
 defaultTasks 'run'
