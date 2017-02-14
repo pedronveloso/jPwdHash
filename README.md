@@ -13,12 +13,28 @@ and login instead of the actual password.
 You can also use the shortened version of the url parameter, the above example would then look like this:
 
     $ jPwdHash -u netflix.com
+    
+
+**Note**: jPwdHash is also provided as a *jar* file, if you prefer to use that one directly you would 
+execute the above command like this: `java -jar jPwdHash.jar -u netflix.com`
 
 # Security
 
 Please consult the [official webpage](https://pedronveloso.github.io/jPwdHash/) for of **jPwdHash** for 
 an explanation on **how it improves the security** of your passwords
 and other important details.
+
+# Get the application
+
+
+
+# Build it yourself
+
+If you'd like to build the application yourself instead of downloading the pre-compiled one here's how to do it:
+
+  1. Clone the repository
+  2. Go to the root of the project and execute `gradle build`
+  3. You can then get the compiled app from `/build/distributions/`
 
 # License
 
