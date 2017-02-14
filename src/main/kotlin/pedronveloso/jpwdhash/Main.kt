@@ -4,6 +4,7 @@ import joptsimple.OptionParser
 import joptsimple.OptionSet
 import pedronveloso.jpwdhash.Parameters.PASS
 import pedronveloso.jpwdhash.Parameters.URL
+import pedronveloso.jpwdhash.hasher.DomainExtractor
 import pedronveloso.jpwdhash.hasher.HashedPassword
 import java.util.*
 
@@ -42,17 +43,17 @@ class Main {
         }
 
         private fun displayHelp(parser: OptionParser) {
-            Logger.logDebug("jPwdHash - Command line tool for password hashing.")
-            Logger.logDebug("\nOfficial webpage: https://pedronveloso.github.io/jPwdHash/")
-            Logger.logDebug("\nUsage:\n")
+            print("jPwdHash - Command line tool for password hashing.")
+            print("\nOfficial webpage: https://pedronveloso.github.io/jPwdHash/")
+            print("\nUsage:\n")
             parser.printHelpOn(System.out)
         }
 
         private fun askPassword(options: OptionSet) {
             val c = System.console()
             if (c == null) {
-                Logger.logError("Java Console was not found, reading with Scanner (insecure)")
-                Logger.logDebug("Enter password:")
+                logError("Java Console was not found, reading with Scanner (insecure)")
+                print("Enter password:")
                 val scanner = Scanner(System.`in`)
                 val readPassword = scanner.nextLine()
                 execute(options, readPassword)
@@ -65,14 +66,21 @@ class Main {
 
         private fun execute(options: OptionSet, password: String) {
             val url = options.valueOf(URL) as String
+            val domain = getDomain(url)
 
-            val hashedPassword = HashedPassword.create(password, url)
+            val hashedPassword = HashedPassword.create(password, domain)
             val result = hashedPassword.toString()
 
-            System.out.print(result)
-            System.out.print("\n")
+            print(result)
+            print("\n")
+        }
+
+        /**
+         * Get the domain portion of the URL
+         */
+        private fun getDomain(url: String): String {
+            return DomainExtractor.extractDomain(
+                    url)
         }
     }
-
-
 }

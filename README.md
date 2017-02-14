@@ -77,8 +77,7 @@ their security, but they can still be reverse-engineered and they eventually hav
 it even easier for their logic to be exploited.
 Also, a lot of these applications do a very good job in one specific are such as encrypting the data that gets saved to your device,
 but miss crucial security concerns such as retaining information in memory that can easily be read
-(typically the operating system could/should guarantee and protect against this, but this is far from reality in any modern operating system, either by exploit or by design as a way for programmers to analyse application runtime
-- point is, don't trust anything that stays in memory). And a lot more issues exist that have to do with the complexity of this solutions, whereas
+(typically the operating system could/should guarantee and protect against this, but this is far from reality in any modern operating system, either by exploit or by design as a way for programmers to analyse application runtime; point being, don't trust anything that stays in memory). And a lot more issues exist that have to do with the complexity of this solutions, whereas
 PwdHash simplifies the problem by avoiding it altogether. It does **not** store information on your hard drive or memory,
 and yet you can access it pretty much on every platform so portability is not sacrificed :)
 
@@ -92,7 +91,7 @@ and everyone can use PwdHash to get the domain-specific credentials.
 Not quite, if you use only 1 master password and an attacker knows you're using PwdHash and he gets a hold of a couple
 of your generated hashed passwords it would be possible to figure out your master password. The combination of all of these
 things is relatively hard and highly unlikely for automated processes, yet if you use the same password every time be sure to pick a strong one.
-Read the excert on `Easy extra layer` below for more on this.
+Read the excerpt on `Easy extra layer` below for more on this.
 
 ### Easy extra layer
 
