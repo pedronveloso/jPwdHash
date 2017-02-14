@@ -1,6 +1,4 @@
 /**
- * PwdHash, HashedPassword.java
- * A password hash implementation for Android.
  *
  * Copyright (c) 2010 Philipp Wolfer
  * 
@@ -29,6 +27,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * 
  * @author Philipp Wolfer <ph.wolfer@gmail.com>
+ * @author Pedro Veloso <pedro.n.veloso@gmail.com>
  */
 
 package pedronveloso.jpwdhash.hasher;
@@ -114,12 +113,11 @@ public final class HashedPassword {
 			mac.init(sk);
 			return mac.doFinal(dataBytes);
 		} catch (NoSuchAlgorithmException e) {
-			//Log.e(HashedPassword.class.getName(),
-			//		"HMAC_MD5 algorithm not supported on this platform.", e);
-			return new byte[0];
+            System.err.print("HMAC_MD5 algorithm not supported on this platform.");
+            return new byte[0];
 		} catch (InvalidKeyException e) {
-			//Log.e(HashedPassword.class.getName(), "Invalid secret key.", e);
-			return new byte[0];
+            System.err.print("Invalid secret key.");
+            return new byte[0];
 		}
 	}
 
@@ -153,9 +151,8 @@ public final class HashedPassword {
 					short unsignedByte = (short) (0x000000FF & ((int) charBytes[0]));
 					bytes[i] = (byte) unsignedByte;
 				} catch (UnsupportedEncodingException e) {
-					//Log.w("Decoding error", Character.toString(data.charAt(i))
-					//		+ " could not be decoded as UTF-16le");
-					bytes[i] = 0x1A; // SUB
+                    System.err.print("Decoding error");
+                    bytes[i] = 0x1A; // SUB
 				}
 			}
 		}

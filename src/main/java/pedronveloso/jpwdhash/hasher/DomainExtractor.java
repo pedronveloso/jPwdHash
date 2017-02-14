@@ -1,7 +1,4 @@
 /*
-  PwdHash, DomainExtractor.java
-  A password hash implementation for Android.
-
   Copyright (c) 2010 Philipp Wolfer
 
   Redistribution and use in source and binary forms, with or without
